@@ -12,3 +12,7 @@ console.log(immutableText);
 const mutableArray = [1, 2, 3];
 mutableArray.push(4); //配列やオブジェクトは定数宣言してもmutableになる。
 console.log(mutableArray);
+
+const mutableObject = {id: 1, value: "fuga"};
+mutableObject["name"] = "hoge";
+console.log(mutableObject);
