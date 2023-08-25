@@ -15,6 +15,11 @@ const users = {
 };
 // 定数定義（usersオブジェクトの今回であれば「hoge」というkeyの値を返すという処理）
 const getUserName = (nameID) => users[nameID];
+// 上記宣言を通常で書くと「return」を使用することになるが1行だとreturn入らなくなる
+// const getUserName = (userID) => {
+//     return users[nameID]
+// };
+
 
 nameFunc("これは名前付き関数です");
 arrowFunc("これはアロー関数です");
