@@ -19,4 +19,15 @@ text.forEach((element) => {
 });
 
 // h2タグのテキスト内容を以下で変更する子も可能
-document.querySelector("h1").textContent = "メッセージが届いています。"
+document.querySelector("h2").textContent = "メッセージが届いています。";
+
+// イベント
+document.querySelector("button").addEventListener('click', () => {
+    // console.log("クリックされました")
+    const h1 = document.querySelectorAll("h1");
+    h1.forEach((element) => {
+        console.log(element.textContent);
+        // toggleメソッドでつけたり外したりできる
+        element.classList.toggle("visible");
+    });
+})
