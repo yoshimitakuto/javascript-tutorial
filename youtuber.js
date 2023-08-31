@@ -17,3 +17,9 @@ const youtuber = {
     plan() {},
     uploadmovie() {},
 };
+
+// アクセス
+let oriraji = youtuber.list.bussiness.youtuber[0].name
+console.log(oriraji); //あっちゃん
+
+youtuber.plan(); //メソッド呼び出し
