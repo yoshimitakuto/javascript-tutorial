@@ -15,3 +15,10 @@ const confirmed = (fn) => { //コールバック関数使用
 
 // 実行
 confirmed(unfollow);
+
+
+// コールバック関数に匿名関数を指定して実行する
+confirmed(() => {
+    console.log("ツイートをキャンセルせず、投稿に成功しました");
+});
+
