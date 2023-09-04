@@ -11,10 +11,16 @@ button.addEventListener("click", async function() {
     // データのやり取り
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await res.json();
-    console.log(users);
+    // console.log(users);
 
     // DOM操作
-    const list = document.createElement("li");
-    list.innerText = "foo";
-    lists.appendChild(list);
+    users.forEach((user) => {
+        const list = document.createElement("li");
+        list.innerText = user.name;
+        lists.appendChild(list);
+    });
+
+    // const list = document.createElement("li");
+    // list.innerText = "foo";
+    // lists.appendChild(list);
 });
