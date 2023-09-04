@@ -23,3 +23,17 @@ const callApi2 = () => {
 };
 
 callApi2();
+
+
+// XMLを用いた書き方
+const callApi3 = () => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+    xhr.responseType = "json";
+    xhr.send();
+    xhr.onload = () => {
+        console.log(xhr.response);
+    };
+};
+
+callApi3();
