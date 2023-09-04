@@ -25,3 +25,19 @@ confirmed(deleteTweet, updateTweet);
 confirmed(() => {
     console.log("更新しました");
 });
+
+
+// 以下のような記述もできる（メソッドで条件分岐)
+const exampleTweet = (fn) => {
+    const input = window.prompt("実行しますか？");
+    fn(input); //inputを関数の引数に渡してあげる　①
+};
+
+//匿名関数の引数に上記のinputを渡してあげる
+exampleTweet((input) => {
+    if (input === "例文") {
+        console.log("成功です！");
+    } else {
+        console.log("失敗です。。。");
+    }
+});
