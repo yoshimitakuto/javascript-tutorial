@@ -9,3 +9,17 @@ async function callApi() {
 };
 
 callApi();
+
+
+// thenを用いた書き方
+const callApi2 = () => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => {
+        return res.json();
+      })
+      .then((users) => {
+        console.log(users);
+      });
+};
+
+callApi2();
