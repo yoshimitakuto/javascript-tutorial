@@ -1,5 +1,3 @@
-// console.log("hello")
-
 // DOM要素取得
 const button = document.getElementById("addBtn");
 const lists = document.getElementById("lists");
@@ -9,19 +7,21 @@ async function getUsers() {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await res.json();
     return users; //ユーザー情報を返す必要がある。
-}
+};
+
+// DOM操作の匿名関数を他でも使える仕様にする（リファクタリング③）
+const addUser = (user) => {
+    const list = document.createElement("li");
+    list.innerText = user.name;
+    lists.appendChild(list);
+};
 
 // 共通で使える関数にする（リファクタリング①）
 async function userLists() {
     // データ読み込み
     const users = await getUsers();
-
     // DOM操作
-    users.forEach((user) => {
-        const list = document.createElement("li");
-        list.innerText = user.name;
-        lists.appendChild(list);
-    })
+    users.forEach(addUser);
 };
 
 // ボタンを押下した時の処理
