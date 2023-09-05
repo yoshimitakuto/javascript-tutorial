@@ -4,11 +4,17 @@
 const button = document.getElementById("addBtn");
 const lists = document.getElementById("lists");
 
-// 共通で使える関数にする（リファクタリング）
-async function userLists() {
-    // データ読み込み
+// ユーザ情報のみを抜き取る関数を定義する（リファクタリング②）
+async function getUsers() {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await res.json();
+    return users; //ユーザー情報を返す必要がある。
+}
+
+// 共通で使える関数にする（リファクタリング①）
+async function userLists() {
+    // データ読み込み
+    const users = await getUsers();
 
     // DOM操作
     users.forEach((user) => {
