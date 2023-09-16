@@ -56,3 +56,16 @@ const milkboy = {
 };
 console.log(milkboy.manzai);
 console.log(milkboy);
+
+
+// 練習問題
+const downtown2 = {
+    name: "ダウンタウン",
+    boke: "松本人志",
+    tsukkomi: "浜田雅功",
+    introduce () {
+        console.log(`コンビ名は${this.name}です。ボケ担当は${this.boke}、ツッコミ担当は${this.tsukkomi}です。よろしくお願いいたします！`);    
+    }
+};
+
+downtown2.introduce();
