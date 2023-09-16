@@ -69,3 +69,36 @@ const downtown2 = {
 };
 
 downtown2.introduce();
+
+
+// 入れ子になったオブジェクト
+const yoshimoto = {
+    downtown: {
+        name: "ダウンタウン",
+        boke: "松本人志",
+        tsukkomi: "浜田雅功",
+        manzaitype () {
+            return "結果発表";
+        }
+    },
+    chidori:  {
+        name: "千鳥",
+        boke: "大悟",
+        tsukkomi: "ノブ",
+        manzaitype () {
+            return "いかにかん";
+        }
+    },
+    ninetynine: {
+        name: "ナインティナイン",
+        boke: "岡村隆史",
+        tsukkomi: "矢部浩之",
+        manzaitype () {
+            return "~~";
+        }
+    }
+};
+console.log(yoshimoto);
+console.log(yoshimoto.ninetynine.boke);
+const value = yoshimoto.chidori.manzaitype("ちどり");
+console.log(value);
