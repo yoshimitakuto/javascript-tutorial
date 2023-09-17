@@ -110,7 +110,7 @@ arr[2] = "ズッキーニ";
 console.log(`初夢は${arr[0]}でした`);
 console.log(`インデックス番号2は${arr[2]}に変更しました`);
 console.log(arr.length);
-
+// ===================================
 const tokugawake = [
     "徳川家康",
     "徳川秀忠",
@@ -132,7 +132,7 @@ for (const shogun of tokugawake) {
     }
     console.log(`江戸幕府将軍「${shogun}公」`);
 };
-
+// ===================================
 const items = [
     'ひのきのぼう',
     'ソード',
@@ -140,7 +140,28 @@ const items = [
     '回復薬',
     '強化薬'
 ];
+const enemyItems = [
+    '火薬',
+    '薬草',
+    '毒薬',
+    'ペイントボール',
+    '金棒'
+];
 items.push("千里眼"); //配列に新たなオブジェクトを追加
 console.log(items);
-const newitems = items.slice(1, 4); //index[4]は含まれない
-console.log(newitems);
+const newItems = items.slice(1, 4); //index[4]は含まれない
+console.log(newItems);
+const allItems = items.concat(enemyItems);
+console.log(allItems);
+
+
+// 多次元配列
+const A = [
+    ['□', '■', '□'],
+    ['■', '□', '■'],
+    ['■', '■', '■'],
+    ['■', '□', '■']
+];
+console.table(A); //テーブル形式で見やすく表示してくれるメソッド(table)
+const ind0ofind1 = A[0][1]; //A配列index番号「0」のindex番号「1」を取得
+console.log(ind0ofind1);
