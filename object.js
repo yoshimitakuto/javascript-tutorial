@@ -102,3 +102,23 @@ console.log(yoshimoto);
 console.log(yoshimoto.ninetynine.boke);
 const value = yoshimoto.chidori.manzaitype("ちどり");
 console.log(value);
+
+
+// 配列
+const arr = ['富士', '鷹', '茄子'];
+arr[2] = "ズッキーニ";
+console.log(`初夢は${arr[0]}でした`);
+console.log(`インデックス番号2は${arr[2]}に変更しました`);
+console.log(arr.length);
+
+const tokugawake = [
+    "徳川家康",
+    "徳川秀忠",
+    "徳川家光",
+    "徳川家綱",
+    "徳川綱吉"
+];
+console.log(tokugawake.length);
+for (let i = 0; i < tokugawake.length; i++) {
+    console.log(`江戸幕府${i+1}代将軍「${tokugawake[i]}公」`);
+};
