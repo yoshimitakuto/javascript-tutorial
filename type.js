@@ -131,3 +131,43 @@ const arr6 = [1, 5, 7, 2, 1, 3, 4, 5, 7, 8, 1, 3, 5, 2];
 const sorted = selectionSort(arr6);
 console.log(sorted);
 console.log(arr6);
+
+
+// クイックソート
+const qSort = (A) => {
+    if (A.length <= 1) {
+        return A; //基本ケース
+    }
+    const p = A[0];
+    const _A = A.slice(1);
+    const X = qSort(_A.filter(x => x < p)); //再帰関数(関数のなかで再度自分自身の関数を呼び出すこと)
+    const Y = [p];
+    const Z = qSort(_A.filter(x => x >= p)); //再帰関数
+    return X.concat(Y).concat(Z);
+};
+const arr7 = [1, 5, 7, 2, 1, 3, 4, 5, 7, 8, 1, 3, 5, 2];
+const sorted2 = qSort(arr7);
+console.log(sorted2);
+
+console.log('処理の手順')
+/*
+qSort([1, 5, 7, 2])
+qSort([]).concat([1]).concat(qSort([5, 7, 2]))
+qSort([]).concat([1]).concat(qSort([2]).concat([5]).concat(qSort([7]))) //[5, 7, 2]をqSortにけるとこうなる
+[].concat([1]).concat([2].concat([5]).concat([7]))
+[].concat([1]).concat([2, 5].concat([7]))
+[].concat([1]).concat([2, 5, 7])
+[].concat([1, 2, 5, 7])
+[1, 2, 5, 7]
+*/
+
+// 階乗
+const fn2 = (A) => {
+    if (A <= 1) {
+        return A; //基本ケース
+    } else {
+        return A * fn2(A - 1); //再帰ケース
+    }
+};
+console.log(fn2(4)); //24(4*3*2*1)
+console.log(fn2(5)); //120(5*4*3*2*1)
