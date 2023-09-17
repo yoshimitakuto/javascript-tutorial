@@ -120,5 +120,27 @@ const tokugawake = [
 ];
 console.log(tokugawake.length);
 for (let i = 0; i < tokugawake.length; i++) {
-    console.log(`江戸幕府${i+1}代将軍「${tokugawake[i]}公」`);
+    const shogun = tokugawake[i];
+    console.log(`江戸幕府${i+1}代将軍「${shogun}公」`);
 };
+// 「for of」の構文(上記のfor文と全く同じもの) index番号を使用しない時に使用する
+for (const shogun of tokugawake) {
+    if (shogun === "徳川秀忠") {
+        continue; //徳川秀忠を飛ばして次のループに移る
+    } else if (shogun === "徳川家綱") {
+        break; //上記の条件がtrueだったらループ処理を中断する
+    }
+    console.log(`江戸幕府将軍「${shogun}公」`);
+};
+
+const items = [
+    'ひのきのぼう',
+    'ソード',
+    '魔法の杖',
+    '回復薬',
+    '強化薬'
+];
+items.push("千里眼"); //配列に新たなオブジェクトを追加
+console.log(items);
+const newitems = items.slice(1, 4); //index[4]は含まれない
+console.log(newitems);
