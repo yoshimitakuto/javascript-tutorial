@@ -165,3 +165,31 @@ const A = [
 console.table(A); //テーブル形式で見やすく表示してくれるメソッド(table)
 const ind0ofind1 = A[0][1]; //A配列index番号「0」のindex番号「1」を取得
 console.log(ind0ofind1);
+A[0][1] = "△"; //該当の箇所を△に変更
+console.table(A);
+// ===================================
+const kuku = [];
+for (let i = 0; i < 9; i++) {
+    kuku.push([]);
+    for (let j = 0; j < 9; j++) {
+        kuku[i].push((i+1)*(j+1));
+    }
+};
+console.table(kuku);
+// ===================================
+const array = [5, 7, 2, 4, 6];
+const val = 6;
+let included = false; //変数にして値を代入できるようにする。
+for (let i = 0; i < array.length; i++) {
+    if (array[i] === val) {
+        included = true;
+        break;
+    }
+}
+if (included) {
+    console.log("YES");
+} else {
+    console.log("NO");
+}
+const message = included ? "YES" : "NO"; //このように三項演算子の書き方をできるが乱用は禁物
+console.log(message);
