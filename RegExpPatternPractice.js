@@ -39,7 +39,14 @@ console.log(tel); //08012345678が出力される
 // ③ testメソッド（正規表現に対してマッチする文字列かどうかを判定する）※返り値は「true/false」となる
 const takuto = "takuto";
 const charato = "charato";
-const regex = RegExp('taku*');
+const regex = new RegExp('taku*');
 console.log(regex.test(takuto)); //true
 console.log(regex.test(charato)); //false
 console.log(/taku*/.test(charato)); //正規表現を直接記述する方法もある
+
+
+// 練習問題
+const targetStr = "abcbcabacbabcbabcbabcABCbaabcbabcbabcABCb"; //今回対象となる文字列からABCを数えるプログラムを記述せよ！（大文字・小文字は区別しない）
+const regex2 = /abc/gi; //「グローバルサーチ（g）＆大文字小文字区別しない（i）」をオプションでつける
+const res = targetStr.match(regex2);
+console.log(res.length);
