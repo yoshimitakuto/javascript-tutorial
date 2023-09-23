@@ -7,7 +7,7 @@ const regexpModule = (() => {
         },
         isValidEmailFormat: (id) => {
             const email = document.getElementById(id).value;
-            const regex = /[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             if (regex.test(email)) {
                 alert("正常なメールアドレスです");
             } else {
