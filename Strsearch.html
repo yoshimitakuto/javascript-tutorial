@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tel & Mail search practice</title>
+</head>
+<body>
+    <h2 class="headName">トップページ</h2>
+
+    <!-- 電話番号 -->
+    <div class="telArea">
+        <label>電話番号</label>
+        <input id="tel" type="text">
+    </div>
+    <div class="btnArea" style="margin-bottom: 20px;">
+        <button onclick="regexpModule.excludeNonNumbers('tel')">ハイフンなしで表示する</button>
+    </div>
+
+    <!-- Email -->
+    <div class="telArea">
+        <label>Email</label>
+        <input id="email" type="email">
+    </div>
+    <div class="btnArea">
+        <button onclick="regexpModule.isValidEmailFormat('email')">メールアドレスチェック</button>
+    </div>
+    <script src="./Strsearch.js"></script>
+</body>
+</html>
