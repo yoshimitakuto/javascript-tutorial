@@ -26,3 +26,20 @@ console.log(result2[0]);
 // 「特殊文字のエスケープ」
 const pat = /\/post\/*/; // /post/というURLに対して正規表現を適用したい場合、「/」が区切りとしてJSに捉えられてしまうため「\」をて用いてJSに教えてあげる
 const pat2 = /^[a-zA-Z0-9]*@gmail.com\.com/; //「.」が特殊文字のピリオドとしてJSに捉えられてしまわないようにするために直前にバックスラッシュを用いる
+
+
+//正規表現でよく使われる「メソッド」
+// ①replaceメソッド（パターン・オプション内容に基づき、第二引数に指定した文字列または空に変換する）
+const telephonNumber = "080-1234-5678";
+const tel = telephonNumber.replace(/[^0-9]/g, ''); //0-9以外の文字列をすべて「空」に置き換える
+console.log(tel); //08012345678が出力される
+
+// ②matchメソッド（正規表現でマッチする文字列を抽出する）※基礎でやっている内容
+
+// ③ testメソッド（正規表現に対してマッチする文字列かどうかを判定する）※返り値は「true/false」となる
+const takuto = "takuto";
+const charato = "charato";
+const regex = RegExp('taku*');
+console.log(regex.test(takuto)); //true
+console.log(regex.test(charato)); //false
+console.log(/taku*/.test(charato)); //正規表現を直接記述する方法もある
